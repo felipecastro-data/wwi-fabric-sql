@@ -7,7 +7,7 @@
 The project needs separate staging and production environments for a Fabric Warehouse, Ontology, Data Agent and App, with source control in GitHub.
 
 ## Options
-1. **Three workspaces** (`SQL` → `SQL-Staging` → `SQL-Prod`) with Git on Dev and a Fabric deployment pipeline.
+1. **Three workspaces** (`WWI Analytics [DEV]` → `WWI Analytics [STG]` → `WWI Analytics [PROD]`) with Git on Dev and a Fabric deployment pipeline.
 2. **One workspace** with staging and production schemas inside a single warehouse.
 
 ## Decision

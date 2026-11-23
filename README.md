@@ -8,7 +8,7 @@ Production-grade Microsoft Fabric project on the **Wide World Importers** sample
 
 | Path | Content |
 |---|---|
-| `fabric/` | Fabric items synced from the `SQL` workspace (Git integration) |
+| `fabric/` | Fabric items synced from the `WWI Analytics [DEV]` workspace (Git integration) |
 | `docs/adr/` | Architecture Decision Records |
 | `docs/images/` | Screenshots used in this README |
 
@@ -16,6 +16,6 @@ Production-grade Microsoft Fabric project on the **Wide World Importers** sample
 
 | Stage | Workspace | Source |
 |---|---|---|
-| Dev | `SQL` | Git-connected to `main` / `fabric/` |
-| Staging | `SQL-Staging` | Deployment pipeline |
-| Prod | `SQL-Prod` | Deployment pipeline |
+| Dev | `WWI Analytics [DEV]` | Git-connected to `main` / `fabric/` |
+| Staging | `WWI Analytics [STG]` | Deployment pipeline |
+| Prod | `WWI Analytics [PROD]` | Deployment pipeline |
