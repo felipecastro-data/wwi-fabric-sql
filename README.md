@@ -9,6 +9,7 @@ Production-grade Microsoft Fabric project on the **Wide World Importers** sample
 | Path | Content |
 |---|---|
 | `fabric/` | Fabric items synced from the `WWI Analytics [DEV]` workspace (Git integration) |
+| `sql/` | T-SQL to create, load (COPY INTO from Microsoft's public WWI parquet) and verify `WWI_Warehouse` |
 | `docs/adr/` | Architecture Decision Records |
 | `docs/images/` | Screenshots used in this README |
 
