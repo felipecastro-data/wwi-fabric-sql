@@ -20,3 +20,11 @@ Production-grade Microsoft Fabric project on the **Wide World Importers** sample
 | Dev | `WWI Analytics [DEV]` | Git-connected to `main` / `fabric/` |
 | Staging | `WWI Analytics [STG]` | Deployment pipeline |
 | Prod | `WWI Analytics [PROD]` | Deployment pipeline |
+
+## Deployment pipeline
+
+`WWI Analytics Pipeline` promotes items Development → Test → Production. Pipelines copy the warehouse schema but not its data, so each stage loads data with `sql/02_load_data.sql` and checks it with `sql/03_verify.sql` ([ADR-0002](docs/adr/0002-deployment-strategy.md)).
+
+![Deployment pipeline with all three stages deployed](docs/images/deployment-pipeline-stages.png)
+
+![Deployment history: Test and Production deployments succeeded](docs/images/deployment-pipeline-history.png)
