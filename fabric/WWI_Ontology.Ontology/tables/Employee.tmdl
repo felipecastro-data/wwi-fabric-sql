@@ -1,0 +1,51 @@
+table Employee
+	lineageTag: 58b6ba66-809d-44e9-b9d7-68185ae2a0eb
+
+	column EmployeeKey
+		dataType: int64
+		lineageTag: 6166c874-c095-4fc7-86c2-152e08d7f01c
+		sourceColumn: EmployeeKey
+
+	column WWIEmployeeID
+		dataType: int64
+		lineageTag: f2a59482-ad7d-41fa-bfb0-70b1f6a991e4
+		sourceColumn: WWIEmployeeID
+
+	column Employee
+		dataType: string
+		lineageTag: 2dfb8221-1153-465c-a2fc-70395292da49
+		sourceColumn: Employee
+
+	column PreferredName
+		dataType: string
+		lineageTag: bef977a1-7042-432e-980a-6fa49191be0f
+		sourceColumn: PreferredName
+
+	column IsSalesperson
+		dataType: boolean
+		lineageTag: 8cc0a3ef-a72b-404a-9fb4-d9e49908de40
+		sourceColumn: IsSalesperson
+
+	partition Employee = entity
+		mode: directLake
+		source
+			entityName: dimension_employee
+			schemaName: dbo
+			expressionSource: 'DirectLake - WWI_Warehouse'
+
+		annotation ONT_WorkspaceId = 00000000-0000-0000-0000-000000000000
+
+		annotation ONT_ItemId = e7c0b414-0268-b879-4998-43bbb15ece1f
+
+		annotation ONT_ItemKind = Warehouse
+
+		annotation ONT_ItemName = ONT_ALM_ITEM_NAME
+
+		annotation ONT_WorkspaceName = WORKSPACE_NAME_PLACEHOLDER
+
+		annotation ONT_SqlEndpoint = 5bcnczvrlemehmstod63t3fspa-riwnabm627burgbmgq6kfts4mi.datawarehouse.fabric.microsoft.com
+
+		annotation ONT_SqlDatabase = WWI_Warehouse
+
+		annotation ONT_PinnedAtUtc = 2026-11-26T21:44:44.586Z
+

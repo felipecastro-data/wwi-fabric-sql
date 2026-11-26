@@ -1,0 +1,16 @@
+model Model
+
+ref table Customer
+ref table City
+ref table StockItem
+ref table Employee
+ref table Sale
+
+ref entity Customer
+ref entity City
+ref entity StockItem
+ref entity Employee
+ref entity Sale
+
+ref namespace default
+

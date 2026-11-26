@@ -1,0 +1,40 @@
+/// The customer who bought this sale line. Joins Sale.CustomerKey to Customer.CustomerKey.
+entityRelationship soldTo
+	label: soldTo
+	lineageTag: 88c7c29a-020b-4ad8-814a-eab2f128975b
+	fromEntity: Sale
+	toEntity: Customer
+
+	backingConfiguration
+		relationship: Sale_Customer
+
+/// The city this sale line was delivered to. Joins Sale.CityKey to City.CityKey.
+entityRelationship deliveredTo
+	label: deliveredTo
+	lineageTag: 1d9bcf29-0e1e-4cf6-8f1d-2c2a8b0d52c5
+	fromEntity: Sale
+	toEntity: City
+
+	backingConfiguration
+		relationship: Sale_City
+
+/// The stock item (product) sold on this sale line. Joins Sale.StockItemKey to StockItem.StockItemKey.
+entityRelationship contains
+	label: contains
+	lineageTag: af099722-a8f6-42ef-bcf6-ba83087fc17f
+	fromEntity: Sale
+	toEntity: StockItem
+
+	backingConfiguration
+		relationship: Sale_StockItem
+
+/// The salesperson (employee) credited with this sale line. Joins Sale.SalespersonKey to Employee.EmployeeKey.
+entityRelationship soldBy
+	label: soldBy
+	lineageTag: 11c4f749-8796-4e73-9319-935cefdb00be
+	fromEntity: Sale
+	toEntity: Employee
+
+	backingConfiguration
+		relationship: Sale_Employee
+

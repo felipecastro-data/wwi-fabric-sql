@@ -1,0 +1,70 @@
+/// A business that buys from Wide World Importers. Each customer belongs to a category (e.g. Novelty Shop, Supermarket) and may be part of a buying group (e.g. Tailspin Toys). BillToCustomer is the account that receives the invoice. CustomerKey 0 means "Unknown".
+entity Customer
+	lineageTag: e1b80d81-5112-402a-a071-2202605e3d86
+	backingTable: Customer
+	keyProperty: CustomerKey
+
+	property CustomerKey
+		dataType: int64
+		lineageTag: 888031c4-661a-4eff-9e21-7fa57a6e5bfe
+
+		backingConfiguration
+			valueColumn: Customer.CustomerKey
+
+	property WWICustomerID
+		dataType: int64
+		lineageTag: 8c277441-0e9e-4da5-8e80-738ae516ab9e
+
+		backingConfiguration
+			valueColumn: Customer.WWICustomerID
+
+	property Customer
+		dataType: string
+		lineageTag: 53ff7731-a6c3-4d7f-b271-176ad8844f6f
+
+		backingConfiguration
+			valueColumn: Customer.Customer
+
+	property BillToCustomer
+		dataType: string
+		lineageTag: a4e7ea4d-a6ca-475a-be64-df27ef92b5b5
+
+		backingConfiguration
+			valueColumn: Customer.BillToCustomer
+
+	property Category
+		dataType: string
+		lineageTag: b0429a19-fde4-47ff-9e5e-3c43b8533c17
+
+		backingConfiguration
+			valueColumn: Customer.Category
+
+	property BuyingGroup
+		dataType: string
+		lineageTag: dfdb0544-a39e-480b-8f28-d64d029d4d83
+
+		backingConfiguration
+			valueColumn: Customer.BuyingGroup
+
+	property PrimaryContact
+		dataType: string
+		lineageTag: 3533163e-9343-49ae-8cdb-b01ae7794baf
+
+		backingConfiguration
+			valueColumn: Customer.PrimaryContact
+
+	property PostalCode
+		dataType: string
+		lineageTag: 697602b4-fda3-40b9-af9a-d0c4238217eb
+
+		backingConfiguration
+			valueColumn: Customer.PostalCode
+
+	synonym client
+
+	synonym buyer
+
+	synonym account
+
+	synonym shop
+

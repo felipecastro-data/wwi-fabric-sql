@@ -1,0 +1,16 @@
+relationship Sale_Employee
+	fromColumn: Sale.SalespersonKey
+	toColumn: Employee.EmployeeKey
+
+relationship Sale_City
+	fromColumn: Sale.CityKey
+	toColumn: City.CityKey
+
+relationship Sale_Customer
+	fromColumn: Sale.CustomerKey
+	toColumn: Customer.CustomerKey
+
+relationship Sale_StockItem
+	fromColumn: Sale.StockItemKey
+	toColumn: StockItem.StockItemKey
+

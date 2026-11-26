@@ -1,0 +1,51 @@
+/// A Wide World Importers staff member. Employees with IsSalesperson = true are the salespeople credited on sales (Sale.SalespersonKey). PreferredName is the short name people use. EmployeeKey 0 means "Unknown".
+entity Employee
+	lineageTag: a53c02df-e502-4c1e-8b0f-7f7e7f5e7cc4
+	backingTable: Employee
+	keyProperty: EmployeeKey
+
+	property EmployeeKey
+		dataType: int64
+		lineageTag: 6166c874-c095-4fc7-86c2-152e08d7f01c
+
+		backingConfiguration
+			valueColumn: Employee.EmployeeKey
+
+	property WWIEmployeeID
+		dataType: int64
+		lineageTag: f2a59482-ad7d-41fa-bfb0-70b1f6a991e4
+
+		backingConfiguration
+			valueColumn: Employee.WWIEmployeeID
+
+	property Employee
+		dataType: string
+		lineageTag: 2dfb8221-1153-465c-a2fc-70395292da49
+
+		backingConfiguration
+			valueColumn: Employee.Employee
+
+	property PreferredName
+		dataType: string
+		lineageTag: bef977a1-7042-432e-980a-6fa49191be0f
+
+		backingConfiguration
+			valueColumn: Employee.PreferredName
+
+	property IsSalesperson
+		dataType: boolean
+		lineageTag: 8cc0a3ef-a72b-404a-9fb4-d9e49908de40
+
+		backingConfiguration
+			valueColumn: Employee.IsSalesperson
+
+	synonym salesperson
+
+	synonym 'sales rep'
+
+	synonym staff
+
+	synonym seller
+
+	synonym rep
+

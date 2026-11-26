@@ -1,0 +1,91 @@
+/// A city where Wide World Importers delivers sales. Each city rolls up to a state/province, country, continent, region, subregion and sales territory (e.g. Southeast, Far West). CityKey 0 means "Unknown".
+entity City
+	lineageTag: 5ba1181d-4711-45bf-9d57-c29b5d3e27c9
+	backingTable: City
+	keyProperty: CityKey
+
+	property CityKey
+		dataType: int64
+		lineageTag: 8f1a8f35-db9d-4858-9204-4c25b73e2c0b
+
+		backingConfiguration
+			valueColumn: City.CityKey
+
+	property WWICityID
+		dataType: int64
+		lineageTag: b0a7353e-a3a3-4179-a02b-041fa27c54f2
+
+		backingConfiguration
+			valueColumn: City.WWICityID
+
+	property City
+		dataType: string
+		lineageTag: c7cc1dbf-dd4f-462a-a742-f63b32c5dae8
+
+		backingConfiguration
+			valueColumn: City.City
+
+	property StateProvince
+		dataType: string
+		lineageTag: e800575a-1ec1-4eb6-abcd-4e30d23b63ec
+
+		backingConfiguration
+			valueColumn: City.StateProvince
+
+	property Country
+		dataType: string
+		lineageTag: 524e3815-1f9e-4df1-8c5a-7737c987815f
+
+		backingConfiguration
+			valueColumn: City.Country
+
+	property Continent
+		dataType: string
+		lineageTag: 334bc19f-8114-4e91-bc46-6767070ce6db
+
+		backingConfiguration
+			valueColumn: City.Continent
+
+	property SalesTerritory
+		dataType: string
+		lineageTag: bb4f3143-5a1d-48c7-bc48-b5f34de8972d
+
+		backingConfiguration
+			valueColumn: City.SalesTerritory
+
+	property Region
+		dataType: string
+		lineageTag: 1c3e4722-d5a2-4316-b018-cb0af230c85c
+
+		backingConfiguration
+			valueColumn: City.Region
+
+	property Subregion
+		dataType: string
+		lineageTag: dcb1dde8-184e-456c-b4c3-cee4ff1dbc0b
+
+		backingConfiguration
+			valueColumn: City.Subregion
+
+	property Location
+		dataType: string
+		lineageTag: 2cf02e9f-e93d-47cc-a680-0d3c62826260
+
+		backingConfiguration
+			valueColumn: City.Location
+
+	property LatestRecordedPopulation
+		dataType: int64
+		lineageTag: e291a96a-cd0a-4eb1-9024-388cfaac3bbc
+
+		backingConfiguration
+			valueColumn: City.LatestRecordedPopulation
+
+	synonym location
+
+	synonym town
+
+	synonym 'delivery city'
+
+	synonym place
+

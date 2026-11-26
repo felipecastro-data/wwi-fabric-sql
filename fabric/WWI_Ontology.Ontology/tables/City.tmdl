@@ -1,0 +1,81 @@
+table City
+	lineageTag: 5bb9f54b-ab47-4fd4-9b78-7dbe6aed4084
+
+	column CityKey
+		dataType: int64
+		lineageTag: 8f1a8f35-db9d-4858-9204-4c25b73e2c0b
+		sourceColumn: CityKey
+
+	column WWICityID
+		dataType: int64
+		lineageTag: b0a7353e-a3a3-4179-a02b-041fa27c54f2
+		sourceColumn: WWICityID
+
+	column City
+		dataType: string
+		lineageTag: c7cc1dbf-dd4f-462a-a742-f63b32c5dae8
+		sourceColumn: City
+
+	column StateProvince
+		dataType: string
+		lineageTag: e800575a-1ec1-4eb6-abcd-4e30d23b63ec
+		sourceColumn: StateProvince
+
+	column Country
+		dataType: string
+		lineageTag: 524e3815-1f9e-4df1-8c5a-7737c987815f
+		sourceColumn: Country
+
+	column Continent
+		dataType: string
+		lineageTag: 334bc19f-8114-4e91-bc46-6767070ce6db
+		sourceColumn: Continent
+
+	column SalesTerritory
+		dataType: string
+		lineageTag: bb4f3143-5a1d-48c7-bc48-b5f34de8972d
+		sourceColumn: SalesTerritory
+
+	column Region
+		dataType: string
+		lineageTag: 1c3e4722-d5a2-4316-b018-cb0af230c85c
+		sourceColumn: Region
+
+	column Subregion
+		dataType: string
+		lineageTag: dcb1dde8-184e-456c-b4c3-cee4ff1dbc0b
+		sourceColumn: Subregion
+
+	column Location
+		dataType: string
+		lineageTag: 2cf02e9f-e93d-47cc-a680-0d3c62826260
+		sourceColumn: Location
+
+	column LatestRecordedPopulation
+		dataType: int64
+		lineageTag: e291a96a-cd0a-4eb1-9024-388cfaac3bbc
+		sourceColumn: LatestRecordedPopulation
+
+	partition City = entity
+		mode: directLake
+		source
+			entityName: dimension_city
+			schemaName: dbo
+			expressionSource: 'DirectLake - WWI_Warehouse'
+
+		annotation ONT_WorkspaceId = 00000000-0000-0000-0000-000000000000
+
+		annotation ONT_ItemId = e7c0b414-0268-b879-4998-43bbb15ece1f
+
+		annotation ONT_ItemKind = Warehouse
+
+		annotation ONT_ItemName = ONT_ALM_ITEM_NAME
+
+		annotation ONT_WorkspaceName = WORKSPACE_NAME_PLACEHOLDER
+
+		annotation ONT_SqlEndpoint = 5bcnczvrlemehmstod63t3fspa-riwnabm627burgbmgq6kfts4mi.datawarehouse.fabric.microsoft.com
+
+		annotation ONT_SqlDatabase = WWI_Warehouse
+
+		annotation ONT_PinnedAtUtc = 2026-11-26T21:12:06.452Z
+

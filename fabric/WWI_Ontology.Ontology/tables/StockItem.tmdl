@@ -1,0 +1,106 @@
+table StockItem
+	lineageTag: 484ab2a9-8769-4e89-bca2-d8746d3478f0
+
+	column StockItemKey
+		dataType: int64
+		lineageTag: f37ccca6-5d5c-4dd0-bc3a-ad3c3a37391a
+		sourceColumn: StockItemKey
+
+	column WWIStockItemID
+		dataType: int64
+		lineageTag: f58e32b8-c43f-4b69-a623-d24ce9a58e1e
+		sourceColumn: WWIStockItemID
+
+	column StockItem
+		dataType: string
+		lineageTag: 3dfb21e7-dc9c-4515-b66b-07056b61a21f
+		sourceColumn: StockItem
+
+	column Color
+		dataType: string
+		lineageTag: e16745cd-f154-4290-b411-7492dcb10347
+		sourceColumn: Color
+
+	column SellingPackage
+		dataType: string
+		lineageTag: 69659e89-8cec-4697-99b0-444399d1a706
+		sourceColumn: SellingPackage
+
+	column BuyingPackage
+		dataType: string
+		lineageTag: 06621097-cee7-4608-89ad-267313cbd448
+		sourceColumn: BuyingPackage
+
+	column Brand
+		dataType: string
+		lineageTag: f87b4f70-d39e-4e5b-8ad5-31260e84976e
+		sourceColumn: Brand
+
+	column Size
+		dataType: string
+		lineageTag: fc7787dc-98e2-4a8e-94c9-26d92f2b46bd
+		sourceColumn: Size
+
+	column LeadTimeDays
+		dataType: int64
+		lineageTag: b29687db-51ca-480d-9479-8bf598cb34ec
+		sourceColumn: LeadTimeDays
+
+	column QuantityPerOuter
+		dataType: int64
+		lineageTag: 91bfd0db-3936-4839-9b4d-8cfddd0437c5
+		sourceColumn: QuantityPerOuter
+
+	column IsChillerStock
+		dataType: boolean
+		lineageTag: 1cf5a2a4-d103-46f8-9f79-496a2d1b10c4
+		sourceColumn: IsChillerStock
+
+	column Barcode
+		dataType: string
+		lineageTag: 33c09541-3716-41c6-ade7-50336e4c0090
+		sourceColumn: Barcode
+
+	column TaxRate
+		dataType: decimal
+		lineageTag: 365f709e-75bd-4df5-860f-1868fa52de86
+		sourceColumn: TaxRate
+
+	column UnitPrice
+		dataType: decimal
+		lineageTag: a4902528-2993-40bd-9b52-764e74f4c4ef
+		sourceColumn: UnitPrice
+
+	column RecommendedRetailPrice
+		dataType: decimal
+		lineageTag: 4cbd839d-4c61-4df7-bcfa-f57467138c81
+		sourceColumn: RecommendedRetailPrice
+
+	column TypicalWeightPerUnit
+		dataType: decimal
+		lineageTag: 4ece1b00-252d-407b-b82c-12423db3779f
+		sourceColumn: TypicalWeightPerUnit
+
+	partition StockItem = entity
+		mode: directLake
+		source
+			entityName: dimension_stock_item
+			schemaName: dbo
+			expressionSource: 'DirectLake - WWI_Warehouse'
+
+		annotation ONT_WorkspaceId = 00000000-0000-0000-0000-000000000000
+
+		annotation ONT_ItemId = e7c0b414-0268-b879-4998-43bbb15ece1f
+
+		annotation ONT_ItemKind = Warehouse
+
+		annotation ONT_ItemName = ONT_ALM_ITEM_NAME
+
+		annotation ONT_WorkspaceName = WORKSPACE_NAME_PLACEHOLDER
+
+		annotation ONT_SqlEndpoint = 5bcnczvrlemehmstod63t3fspa-riwnabm627burgbmgq6kfts4mi.datawarehouse.fabric.microsoft.com
+
+		annotation ONT_SqlDatabase = WWI_Warehouse
+
+		annotation ONT_PinnedAtUtc = 2026-11-26T21:32:31.112Z
+

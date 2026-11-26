@@ -1,0 +1,156 @@
+/// One invoice line: a stock item sold to a customer, delivered to a city, credited to a salesperson, on an invoice date. Revenue = TotalExcludingTax (before tax) or TotalIncludingTax (after tax); Profit is margin per line. BillToCustomerKey is the account invoiced, which can differ from the buying customer. Lines with the same WWIInvoiceID belong to one invoice.
+entity Sale
+	lineageTag: fd5feb70-1b9a-46a0-96c5-7ef57eefc229
+	backingTable: Sale
+	keyProperty: SaleKey
+
+	property SaleKey
+		dataType: int64
+		lineageTag: e1952d2a-1878-4476-80f6-0e0a9b99dc25
+
+		backingConfiguration
+			valueColumn: Sale.SaleKey
+
+	property CityKey
+		dataType: int64
+		lineageTag: 19375442-ba65-4646-b759-68e6b4317851
+
+		backingConfiguration
+			valueColumn: Sale.CityKey
+
+	property CustomerKey
+		dataType: int64
+		lineageTag: 3633e3ca-3f56-40f3-894b-55b186b1321f
+
+		backingConfiguration
+			valueColumn: Sale.CustomerKey
+
+	property BillToCustomerKey
+		dataType: int64
+		lineageTag: edf2b6cb-78d9-498d-a855-812ca63f05f0
+
+		backingConfiguration
+			valueColumn: Sale.BillToCustomerKey
+
+	property StockItemKey
+		dataType: int64
+		lineageTag: 6c7e5d00-f4f0-4482-8cd7-09fa477c076c
+
+		backingConfiguration
+			valueColumn: Sale.StockItemKey
+
+	property InvoiceDate
+		dataType: dateTime
+		lineageTag: cc793408-3b05-4c71-966d-897bade85226
+
+		backingConfiguration
+			valueColumn: Sale.InvoiceDateKey
+
+	property DeliveryDate
+		dataType: dateTime
+		lineageTag: 76c4b286-9fd0-456f-9b03-ffdb78a2ddea
+
+		backingConfiguration
+			valueColumn: Sale.DeliveryDateKey
+
+	property SalespersonKey
+		dataType: int64
+		lineageTag: 6f16ec85-a037-4937-a364-3631cd87f3f6
+
+		backingConfiguration
+			valueColumn: Sale.SalespersonKey
+
+	property WWIInvoiceID
+		dataType: int64
+		lineageTag: b6a0ace8-5d0e-4983-993f-73318b53565d
+
+		backingConfiguration
+			valueColumn: Sale.WWIInvoiceID
+
+	property Description
+		dataType: string
+		lineageTag: 325bb887-4d75-4bbf-93f0-63c064958806
+
+		backingConfiguration
+			valueColumn: Sale.Description
+
+	property Package
+		dataType: string
+		lineageTag: 9c692876-bf20-4c40-82e1-72d094f0fcb4
+
+		backingConfiguration
+			valueColumn: Sale.Package
+
+	property Quantity
+		dataType: int64
+		lineageTag: e0da633d-a084-45db-b529-44be5e326554
+
+		backingConfiguration
+			valueColumn: Sale.Quantity
+
+	property UnitPrice
+		dataType: decimal
+		lineageTag: fedfcfca-f05a-4503-ab3d-c68f3edd76d6
+
+		backingConfiguration
+			valueColumn: Sale.UnitPrice
+
+	property TaxRate
+		dataType: decimal
+		lineageTag: 3305a2ec-9250-43e4-863b-3ba2da418da2
+
+		backingConfiguration
+			valueColumn: Sale.TaxRate
+
+	property TotalExcludingTax
+		dataType: decimal
+		lineageTag: c3a083e2-ddf5-4d3e-a6e0-0eb665701b77
+
+		backingConfiguration
+			valueColumn: Sale.TotalExcludingTax
+
+	property TaxAmount
+		dataType: decimal
+		lineageTag: 1e88b13e-73f8-4516-8805-af0b83040efc
+
+		backingConfiguration
+			valueColumn: Sale.TaxAmount
+
+	property Profit
+		dataType: decimal
+		lineageTag: 39f2137e-bdca-499a-8be0-e015ec78a759
+
+		backingConfiguration
+			valueColumn: Sale.Profit
+
+	property TotalIncludingTax
+		dataType: decimal
+		lineageTag: 5e822336-ef6c-4d2a-a8c0-eba5f21496b7
+
+		backingConfiguration
+			valueColumn: Sale.TotalIncludingTax
+
+	property TotalDryItems
+		dataType: int64
+		lineageTag: 3511d64b-72a7-46cb-ad38-bc4f54ec53d8
+
+		backingConfiguration
+			valueColumn: Sale.TotalDryItems
+
+	property TotalChillerItems
+		dataType: int64
+		lineageTag: 8c50cd19-e3fb-4542-b9be-b76509495edb
+
+		backingConfiguration
+			valueColumn: Sale.TotalChillerItems
+
+	synonym sale
+
+	synonym 'order line'
+
+	synonym 'invoice line'
+
+	synonym transaction
+
+	synonym sales
+

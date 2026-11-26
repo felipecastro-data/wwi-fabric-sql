@@ -1,0 +1,126 @@
+table Sale
+	lineageTag: 5faf6f3b-d67a-4a58-908d-6553ec8fd74e
+
+	column SaleKey
+		dataType: int64
+		lineageTag: 48c6d944-fb8c-4289-babf-57771d4c6c86
+		sourceColumn: SaleKey
+
+	column CityKey
+		dataType: int64
+		lineageTag: 18f77c17-c3a0-4ff9-adf7-e93a504f5369
+		sourceColumn: CityKey
+
+	column CustomerKey
+		dataType: int64
+		lineageTag: 373e7963-3b34-468b-aebf-783e1bffcdde
+		sourceColumn: CustomerKey
+
+	column BillToCustomerKey
+		dataType: int64
+		lineageTag: 241b23ff-f810-42c5-9f66-333faa46d03c
+		sourceColumn: BillToCustomerKey
+
+	column StockItemKey
+		dataType: int64
+		lineageTag: b0c02c91-927c-46e5-b49d-28b78293ae73
+		sourceColumn: StockItemKey
+
+	column InvoiceDateKey
+		dataType: dateTime
+		lineageTag: 3c880489-8835-4737-a677-51b598c93ea0
+		sourceColumn: InvoiceDateKey
+
+	column DeliveryDateKey
+		dataType: dateTime
+		lineageTag: fe83ac34-906d-42e9-ad3b-7b98c30d925c
+		sourceColumn: DeliveryDateKey
+
+	column SalespersonKey
+		dataType: int64
+		lineageTag: 53d41a9b-0ad9-4fe5-941a-2c94dea1955a
+		sourceColumn: SalespersonKey
+
+	column WWIInvoiceID
+		dataType: int64
+		lineageTag: 95470537-1bb6-420a-80e2-d463b4291f3c
+		sourceColumn: WWIInvoiceID
+
+	column Description
+		dataType: string
+		lineageTag: 68164cb0-7460-452f-bf9f-428bf3da6131
+		sourceColumn: Description
+
+	column Package
+		dataType: string
+		lineageTag: 031f9a96-a080-43c0-8c7c-6ee1de904e99
+		sourceColumn: Package
+
+	column Quantity
+		dataType: int64
+		lineageTag: 8090a298-3b57-4975-81c4-04e4e1003262
+		sourceColumn: Quantity
+
+	column UnitPrice
+		dataType: decimal
+		lineageTag: 6b144d4a-ed63-4a3e-937e-aef6b68bb4f2
+		sourceColumn: UnitPrice
+
+	column TaxRate
+		dataType: decimal
+		lineageTag: 432a9fb2-9c25-45f0-8de6-e271c39983af
+		sourceColumn: TaxRate
+
+	column TotalExcludingTax
+		dataType: decimal
+		lineageTag: 9fac09fe-4ec0-4bf6-bb84-d87ab79dea79
+		sourceColumn: TotalExcludingTax
+
+	column TaxAmount
+		dataType: decimal
+		lineageTag: 481021f1-b96b-4420-9c63-a6b3407cee04
+		sourceColumn: TaxAmount
+
+	column Profit
+		dataType: decimal
+		lineageTag: 7c6124de-ff68-42ad-ba83-a7c4b0a82aef
+		sourceColumn: Profit
+
+	column TotalIncludingTax
+		dataType: decimal
+		lineageTag: 386f8ccf-c32b-4b4e-84d8-1cc9a9399c29
+		sourceColumn: TotalIncludingTax
+
+	column TotalDryItems
+		dataType: int64
+		lineageTag: c52f5af2-6868-4ea1-a29c-61db1d2091a8
+		sourceColumn: TotalDryItems
+
+	column TotalChillerItems
+		dataType: int64
+		lineageTag: eba7e5cc-aabd-472d-bb43-bc81d1f702f3
+		sourceColumn: TotalChillerItems
+
+	partition Sale = entity
+		mode: directLake
+		source
+			entityName: fact_sale
+			schemaName: dbo
+			expressionSource: 'DirectLake - WWI_Warehouse'
+
+		annotation ONT_WorkspaceId = 00000000-0000-0000-0000-000000000000
+
+		annotation ONT_ItemId = e7c0b414-0268-b879-4998-43bbb15ece1f
+
+		annotation ONT_ItemKind = Warehouse
+
+		annotation ONT_ItemName = ONT_ALM_ITEM_NAME
+
+		annotation ONT_WorkspaceName = WORKSPACE_NAME_PLACEHOLDER
+
+		annotation ONT_SqlEndpoint = 5bcnczvrlemehmstod63t3fspa-riwnabm627burgbmgq6kfts4mi.datawarehouse.fabric.microsoft.com
+
+		annotation ONT_SqlDatabase = WWI_Warehouse
+
+		annotation ONT_PinnedAtUtc = 2026-11-26T21:50:00.384Z
+

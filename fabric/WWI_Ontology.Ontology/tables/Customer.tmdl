@@ -1,0 +1,66 @@
+table Customer
+	lineageTag: 955cb7e8-84e0-4505-b8db-7b9ee8f4ff1b
+
+	column CustomerKey
+		dataType: int64
+		lineageTag: 888031c4-661a-4eff-9e21-7fa57a6e5bfe
+		sourceColumn: CustomerKey
+
+	column WWICustomerID
+		dataType: int64
+		lineageTag: 8c277441-0e9e-4da5-8e80-738ae516ab9e
+		sourceColumn: WWICustomerID
+
+	column Customer
+		dataType: string
+		lineageTag: 53ff7731-a6c3-4d7f-b271-176ad8844f6f
+		sourceColumn: Customer
+
+	column BillToCustomer
+		dataType: string
+		lineageTag: a4e7ea4d-a6ca-475a-be64-df27ef92b5b5
+		sourceColumn: BillToCustomer
+
+	column Category
+		dataType: string
+		lineageTag: b0429a19-fde4-47ff-9e5e-3c43b8533c17
+		sourceColumn: Category
+
+	column BuyingGroup
+		dataType: string
+		lineageTag: dfdb0544-a39e-480b-8f28-d64d029d4d83
+		sourceColumn: BuyingGroup
+
+	column PrimaryContact
+		dataType: string
+		lineageTag: 3533163e-9343-49ae-8cdb-b01ae7794baf
+		sourceColumn: PrimaryContact
+
+	column PostalCode
+		dataType: string
+		lineageTag: 697602b4-fda3-40b9-af9a-d0c4238217eb
+		sourceColumn: PostalCode
+
+	partition Customer = entity
+		mode: directLake
+		source
+			entityName: dimension_customer
+			schemaName: dbo
+			expressionSource: 'DirectLake - WWI_Warehouse'
+
+		annotation ONT_WorkspaceId = 00000000-0000-0000-0000-000000000000
+
+		annotation ONT_ItemId = e7c0b414-0268-b879-4998-43bbb15ece1f
+
+		annotation ONT_ItemKind = Warehouse
+
+		annotation ONT_ItemName = ONT_ALM_ITEM_NAME
+
+		annotation ONT_WorkspaceName = WORKSPACE_NAME_PLACEHOLDER
+
+		annotation ONT_SqlEndpoint = 5bcnczvrlemehmstod63t3fspa-riwnabm627burgbmgq6kfts4mi.datawarehouse.fabric.microsoft.com
+
+		annotation ONT_SqlDatabase = WWI_Warehouse
+
+		annotation ONT_PinnedAtUtc = 2026-11-26T20:47:28.324Z
+

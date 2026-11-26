@@ -1,0 +1,7 @@
+expression 'DirectLake - WWI_Warehouse' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/00000000-0000-0000-0000-000000000000/e7c0b414-0268-b879-4998-43bbb15ece1f", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 653b14ad-15cd-4060-ad00-4fa03901f54e
+
