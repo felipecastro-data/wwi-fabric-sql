@@ -54,9 +54,15 @@ A Fabric Data agent can't run on trial capacity, so the agent is **Claude Haiku 
 
 ![ask_wwi: revenue and profit by year](docs/images/agent-test-revenue-by-year.png)
 
-| Question | Model calls | Input tokens | Output tokens | Cost (USD) |
-|---|---|---|---|---|
-| What was total revenue and profit by year? | 2 | 3,335 | 483 | $0.000575 |
+Token usage, as returned by `ask_wwi` on each call:
+
+| Stage | Question | Model calls | Input tokens | Output tokens | Cost (USD) |
+|---|---|---|---|---|---|
+| DEV | What was total revenue and profit by year? | 2 | 3,335 | 483 | $0.000575 |
+| STG | How many sales rows are there in total? | 2 | 3,064 | 103 | $0.000358 |
+| PROD | Which 3 stock items sold the most units? | 2 | 3,355 | 391 | $0.000531 |
+
+Average: about **$0.0005 per question**, so the $6.56 of API credit covers roughly 13,000 questions.
 
 Claude's SQL for that question:
 
@@ -66,6 +72,28 @@ FROM dbo.fact_sale GROUP BY YEAR(InvoiceDateKey) ORDER BY SaleYear
 ```
 
 The agent showed that all 50,150,843 sales in this sample are dated in **2000**: $36,186,702,997.75 revenue and $17,980,267,019.75 profit.
+
+### Promoted DEV → Test → Production
+
+`WWI_Agent_Functions` was committed from Fabric to [`fabric/WWI_Agent_Functions.UserDataFunction/`](fabric/WWI_Agent_Functions.UserDataFunction/) and deployed through `WWI Analytics Pipeline`. Its `definition.json` binds the `WWIWarehouse` alias to the warehouse's **logical ID** in the same workspace, so each stage queries its own warehouse with no deployment rules.
+
+![Deployed to Test](docs/images/agent-pipeline-deployed-test.png)
+
+![Deployed to Production](docs/images/agent-pipeline-deployed-prod.png)
+
+In STG the connection resolves to item `c3f4530d…`, which is the STG `WWI_Warehouse`:
+
+![STG WWI_Warehouse item ID](docs/images/agent-stg-warehouse-id.png)
+
+In PROD the connection points at `WWI Analytics [PROD]`:
+
+![PROD connection bound to the PROD warehouse](docs/images/agent-prod-connection.png)
+
+Both stages answered from their own warehouse:
+
+![ask_wwi in STG](docs/images/agent-test-stg.png)
+
+![ask_wwi in PROD](docs/images/agent-test-prod.png)
 
 Setup in Fabric and Azure:
 

@@ -24,7 +24,8 @@ Option 2. `WWI_Agent_Functions` (User data functions) in DEV exposes one functio
 Source: [`fabric/WWI_Agent_Functions.UserDataFunction/function_app.py`](../../fabric/WWI_Agent_Functions.UserDataFunction/function_app.py), committed from Fabric Git integration. The SQL guard is covered by [`tests/test_validate_sql.py`](../../tests/test_validate_sql.py).
 
 ## Consequences
-- **Cost is tiny and measured on every call.** "What was total revenue and profit by year?" took 2 model calls, 3,335 input and 483 output tokens, so about **$0.0006** per question.
+- **Cost is tiny and measured on every call.** "What was total revenue and profit by year?" took 2 model calls, 3,335 input and 483 output tokens, so about **$0.0006** per question. Tests in STG and PROD cost $0.000358 and $0.000531.
+- **It ships through the existing pipeline.** The warehouse connection is stored by logical ID, so the deployed copies bind to the STG and PROD warehouses automatically. This was verified in both stages on 2026-11-27. The Key Vault connection needs no rebinding, because every stage reads the same vault.
 - **The key never touches code or Git.** Rotating it means updating one Key Vault secret. The Claude Console key is capped by a $10 monthly spend limit.
 - **The ontology isn't used by this agent.** Claude gets the schema and join rules in its prompt instead. `WWI_Ontology` stays as the business layer for a native Fabric Data agent if the project moves to paid capacity.
 - **The SQL guard is defense in depth, not the only control.** Queries run with the invoking user's warehouse permissions. Production should run the agent as an identity with read-only warehouse access.
