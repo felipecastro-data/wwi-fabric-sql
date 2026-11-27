@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/userDataFunction/definition/1.1.0/schema.json",
+  "runtime": "PYTHON",
+  "connectedDataSources": [
+    {
+      "alias": "WWIWarehouse",
+      "artifactId": "e7c0b414-0268-b879-4998-43bbb15ece1f",
+      "artifactType": "Warehouse",
+      "workspaceId": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "functions": [
+    {
+      "name": "ask_wwi",
+      "description": "",
+      "isPublicEndpointEnabled": true
+    }
+  ],
+  "libraries": {
+    "public": [
+      {
+        "name": "anthropic",
+        "type": "PYPI",
+        "version": "2.14.0"
+      },
+      {
+        "name": "azure-keyvault-secrets",
+        "type": "PYPI",
+        "version": "4.12.0"
+      },
+      {
+        "name": "fabric-user-data-functions",
+        "type": "PYPI",
+        "version": "1.0"
+      }
+    ],
+    "private": []
+  }
+}
