@@ -26,7 +26,7 @@ Source: [`fabric/WWI_Agent_Functions.UserDataFunction/function_app.py`](../../fa
 ## Consequences
 - **Cost is tiny and measured on every call.** "What was total revenue and profit by year?" took 2 model calls, 3,335 input and 483 output tokens, so about **$0.0006** per question. Tests in STG and PROD cost $0.000358 and $0.000531.
 - **It ships through the existing pipeline.** The warehouse connection is stored by logical ID, so the deployed copies bind to the STG and PROD warehouses automatically. This was verified in both stages on 2026-11-27. The Key Vault connection needs no rebinding, because every stage reads the same vault.
-- **The key never touches code or Git.** Rotating it means updating one Key Vault secret. The Claude Console key is capped by a $10 monthly spend limit.
+- **The key never touches code or Git.** Rotating it means updating one Key Vault secret. Spend is capped by prepaid Claude Console credits (about $6.56) with auto-reload off, so the agent stops when the credits run out.
 - **The ontology isn't used by this agent.** Claude gets the schema and join rules in its prompt instead. `WWI_Ontology` stays as the business layer for a native Fabric Data agent if the project moves to paid capacity.
 - **The SQL guard is defense in depth, not the only control.** Queries run with the invoking user's warehouse permissions. Production should run the agent as an identity with read-only warehouse access.
 - **No prompt caching.** The schema prompt is below Haiku's minimum cacheable size, so every call pays full input price. At these prices that costs less than the caching setup would.
