@@ -44,6 +44,8 @@ Production-grade Microsoft Fabric project on the **Wide World Importers** sample
 
 The definition is synced to Git as TMDL (`fabric/WWI_Ontology.Ontology/`) and promoted with the same pipeline. Each stage binds to its own warehouse automatically.
 
+The pipeline shows the ontology as "Different from source" between DEV and Test even though the content matches. ADR-0003 explains this as a preview quirk.
+
 ![Ontology deployed to Production](docs/images/ontology-pipeline-prod.png)
 
 ## Data agent
